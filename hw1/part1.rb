@@ -4,13 +4,13 @@
 
 
 def palindrome?(str)
-  # YOUR CODE HERE
+  ss = str.downcase.gsub(/[^A-Za-z0-9]/,'')
+  ss == ss.reverse
 end
 
 def count_words(str)
-  # YOUR CODE HERE
+  str.split(' ').length
 end
-
 
 #the code below this line will test your functions.  You should remove everything below this line prior to submitting your file
 
@@ -27,11 +27,10 @@ end
 test_str = "Madam, I'm Adam"
 
 if palindrome? test_str
-  puts test_str " is a palindrome!"
+  puts test_str + " is a palindrome!"
 else
-  puts test_str " is NOT a palindrome!"
+  puts test_str + " is NOT a palindrome!"
 end
-
 
 test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
 
