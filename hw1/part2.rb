@@ -53,4 +53,15 @@ def rps_tournament_winner(tournament)
 	end
 end
 
-
+#x = [
+#    [
+#        [ ["Armando", "P"], ["Dave", "S"] ],
+#        [ ["Richard", "R"],  ["Michael", "S"] ],
+#    ],
+#    [
+#        [ ["Allen", "S"], ["Omer", "P"] ],
+#        [ ["David E.", "R"], ["Richard X.", "P"] ]
+#    ]
+#]
+#
+#print rps_tournament_winner(x)
