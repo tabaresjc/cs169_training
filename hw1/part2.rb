@@ -9,7 +9,7 @@ def rps_game_winner(game)
 		if x.flatten.length == 16
 			x = rps_tournament_winner(x)
 		elsif x.flatten.length == 8
-			x = rps_result(x[0],[1])
+			x = rps_result(x[0],x[1])
 		end
 		raise NoSuchStrategyError unless x[1].match(/[RPS]/i)
 		x[1] = x[1].upcase
@@ -37,13 +37,20 @@ def rps_result(m1, m2)
 end
 
 def rps_tournament_winner(tournament)
-	
-	rt = []
-	
-	tournament.each do |mg| 
-		rt << rps_result(mg[0],mg[1])
+	return nil unless tournament.kind_of?(Array)
+	puts "#{tournament.flatten.length}"
+	if tournament.flatten.length == 4		
+		rps_game_winner(tournament)
+	elsif tournament.flatten.length == 8
+		rps_result(tournament[0],tournament[1])
+	else
+		rps_game_winner(
+			[
+			rps_result(tournament[0][0],tournament[0][1]),
+			rps_result(tournament[1][0],tournament[1][1])
+			]
+		)
 	end
-	
-	return rps_game_winner(rt)
-	
 end
+
+
