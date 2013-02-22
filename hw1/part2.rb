@@ -38,7 +38,7 @@ end
 
 def rps_tournament_winner(tournament)
 	return nil unless tournament.kind_of?(Array)
-	puts "#{tournament.flatten.length}"
+	
 	if tournament.flatten.length == 4		
 		rps_game_winner(tournament)
 	elsif tournament.flatten.length == 8
@@ -53,15 +53,17 @@ def rps_tournament_winner(tournament)
 	end
 end
 
-#x = [
-#    [
-#        [ ["Armando", "P"], ["Dave", "S"] ],
-#        [ ["Richard", "R"],  ["Michael", "S"] ],
-#    ],
-#    [
-#        [ ["Allen", "S"], ["Omer", "P"] ],
-#        [ ["David E.", "R"], ["Richard X.", "P"] ]
-#    ]
-#]
-#
-#print rps_tournament_winner(x)
+# x = [
+   # [
+       # [ ["Armando", "P"], ["Dave", "S"] ],
+       # [ ["Richard", "R"],  ["Michael", "S"] ],
+   # ],
+   # [
+       # [ ["Allen", "S"], ["Omer", "P"] ],
+       # [ ["David E.", "R"], ["Richard X.", "P"] ]
+   # ]
+# ]
+
+# print rps_tournament_winner(x)
+
+
