@@ -1,0 +1,26 @@
+------------------------------------------
+HEROKU
+------------------------------------------
+
+git clone git://github.com/heroku/ruby-sample.git
+cd ruby-sample
+heroku create
+git push heroku master
+heroku open
+
+
+------------------------------------------
+HEROKU KEYS
+------------------------------------------
+->heroku login
+abc@gmail.com & password
+
+->cd C:\Users\yourusername\.ssh
+->ssh-keygen -t rsa -f id_rsa
+
+if asks any passphrase don't use blank, fill with a passphrase,but not forget it.
+
+->heroku keys:add "id_rsa.pub"
+change directory to workspace, than
+
+->git clone git@heroku.com:stark-dawn-1234.git -o heroku
