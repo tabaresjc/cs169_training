@@ -8,5 +8,13 @@ def palindrome?(str)
 end
 
 def count_words(str)
-  str.split(' ').length
+	count = {}
+	str.downcase.scan(/\b\w+\b/).each do |x|
+		count[x] = if count.has_key? x
+						count[x].next
+					else
+						1
+					end
+	end
+	return count
 end

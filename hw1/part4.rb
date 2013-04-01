@@ -6,8 +6,8 @@ class Dessert
 		@calories = calories
 	end
 
-	attr_reader :name
-	attr_reader :calories
+	attr_accessor :name
+	attr_accessor :calories
 
 	def healthy?
 		@calories < 200
@@ -27,17 +27,19 @@ class JellyBean < Dessert
 	@flavor = flavor
   end
   
-  attr_reader :flavor
+  attr_accessor :flavor
   
   def delicious?
-    true unless @flavor == "black licorice"
-	false
+    if @flavor == "black licorice"
+		false
+	else
+		true
+	end
   end
-
 end
 
-# d1 = Dessert.new("Dango",500)
-# d2 = JellyBean.new("JellyBean",250,"black licorice")
+d1 = Dessert.new("Dango",500)
+d2 = JellyBean.new("JellyBean",250,"black licorice")
 
-# puts "Is #{d1.name} Delicious? #{d1.delicious?}"
-# puts "Is #{d2.name} with flavor '#{d2.flavor}' Delicious? #{d2.delicious?}"
+puts "Is #{d1.name} Delicious? #{d1.delicious?}"
+puts "Is #{d2.name} with flavor '#{d2.flavor}' Delicious? #{d2.delicious?}"
